@@ -1,22 +1,19 @@
 {
 	"name": "ecommerce_server",
 	"version": "1.0.0",
-	"description": "",
+	"description": "GraphQL APIs for ecommerce application",
 	"main": "app.js",
 	"scripts": {
-		"start": "npm run build && node ./build/app.js",
-		"start:dev": "nodemon --exec babel-node ./app.js",
-		"clean": "rm -rf build && mkdir build",
-		"build-babel": "babel -d ./build ./app.js -s",
-		"build": "npm run clean && npm run build-babel"
+		"start": "nodemon --exec babel-node ./app.js"
 	},
 	"author": "Amarthya K R",
 	"license": "ISC",
 	"dependencies": {
 		"@babel/cli": "^7.21.0",
 		"@babel/core": "^7.21.3",
+		"@prisma/client": "^5.1.1",
 		"apollo-server": "^3.12.0",
-		"graphql": "^16.6.0"
+		"graphql": "^16.8.0"
 	},
 	"devDependencies": {
 		"@babel/node": "^7.20.7",
@@ -24,6 +21,7 @@
 		"@babel/polyfill": "^7.12.1",
 		"@babel/preset-env": "^7.20.2",
 		"@babel/runtime": "^7.21.0",
-		"nodemon": "^2.0.21"
+		"nodemon": "^2.0.21",
+		"prisma": "^5.1.1"
 	}
 }
