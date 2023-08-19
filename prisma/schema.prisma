@@ -14,10 +14,12 @@ model Product {
   id        Int     @id @default(autoincrement())
   name      String
   price     Int
+  discount  Int?
   brand     String
   image     String
   info      String
   color     String
+  rating    Float
   category  String
   sizes     String[]
 }
