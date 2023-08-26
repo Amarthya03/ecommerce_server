@@ -18,6 +18,13 @@ const resolvers = {
 		products: (parent, args) => {
 			return prisma.product.findMany();
 		},
+		productById: (parent, args) => {
+			return prisma.product.findUnique({
+				where: {
+					id: Number(args.id),
+				},
+			});
+		},
 	},
 	Mutation: {
 		addProduct: (parent, args) => {
