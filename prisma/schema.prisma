@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = "debian-openssl-3.0.x"
 }
 
 datasource db {
@@ -22,4 +23,28 @@ model Product {
   rating    Float
   category  String
   sizes     String[]
+  cart      Cart[]
+  wishlist  Wishlist[]
+  orders    Orders[]
+}
+
+model Cart {
+  cartId    Int     @id @default(autoincrement())
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  userId    String
+}
+
+model Wishlist {
+  wishlistId    Int     @id @default(autoincrement())
+  product       Product @relation(fields: [productId], references: [id])
+  productId     Int
+  userId        String
+}
+
+model Orders {
+  orderId    Int     @id @default(autoincrement())
+  product       Product @relation(fields: [productId], references: [id])
+  productId     Int
+  userId        String
 }
